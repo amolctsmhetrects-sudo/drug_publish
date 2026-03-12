@@ -1,0 +1,88 @@
+{
+  "data_source_name":"dru_dev_set1",
+  "data_source_status":"Y",
+  "description":"",
+  "parallel_job_limit":"10",
+  "notifications": {
+    "success" : ["x@gmail.com,y@gmail.com"],
+    "failure" : ["x@gmail.com,y@gmail.com"]
+  },
+  "cluster": {
+    "cluster_type":"",
+    "cluster_name":"",
+    "configuration": {
+      "spark_version":"",
+      "node_type":"",
+      "aws_attributes": {
+        "availability":"",
+        "zone_id":"",
+        "instance_profile_arn":""
+      },
+      "auto_scale": {
+        "min_workers":"2",
+        "max_workers":"4"
+      },
+      "spark_configuration": {  
+      }
+    }
+  },
+  "jobs": [
+    "job_name":"",
+    "schedule":"",
+    "data_quality_check":"Y",
+    "job_type":"HIST",
+    "tag_params": {
+    },
+    "individual_job_params": {
+      "destination_data_path":"",
+      "source_file_path":"",
+      "query_file_path":"",
+      "unified_table_name":"",
+      "application":""
+    },
+
+    "job_name":"",
+    "schedule":"",
+    "data_quality_check":"Y",
+    "job_type":"HIST",
+    "tag_params": {
+    },
+    "individual_job_params": {
+      "destination_data_path":"",
+      "source_file_path":"",
+      "query_file_path":"",
+      "unified_table_name":"",
+      "application":""
+    },
+
+    "job_name":"",
+    "schedule":"",
+    "data_quality_check":"Y",
+    "job_type":"HIST",
+    "tag_params": {
+    },
+    "individual_job_params": {
+      "destination_data_path":"",
+      "source_file_path":"",
+      "query_file_path":"",
+      "unified_table_name":"",
+      "application":""
+    },
+
+    "job_name":"",
+    "schedule":"",
+    "data_quality_check":"Y",
+    "job_type":"HIST",
+    "tag_params": {
+    },
+    "individual_job_params": {
+      "destination_data_path":"",
+      "source_file_path":"",
+      "query_file_path":"",
+      "unified_table_name":"",
+      "application":""
+    }
+    
+  ]
+}
+  

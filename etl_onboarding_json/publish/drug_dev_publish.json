@@ -1,0 +1,90 @@
+{
+  "data_source_name": "drug_dev_publish_set1",
+  "data_source_status": "Y",
+  "description": "Drug Development Clinical Trials - Publish Aggregation Set 1",
+  "parallel_job_limit": "10",
+  "notifications": {
+    "success": [
+      "test@novartis.net"
+    ],
+    "failure": [
+      "test@novartis.net"
+    ]
+  },
+  "cluster": {
+    "cluster_type": "",
+    "cluster_name": "",
+    "configuration": {
+      "spark_version": "",
+      "node_type": "",
+      "aws_attributes": {
+        "availability": "",
+        "zone_id": "",
+        "instance_profile_arn": ""
+      },
+      "auto_scale": {
+        "min_workers": "2",
+        "max_workers": "4"
+      },
+      "spark_configuration": {}
+    }
+  },
+  "jobs": [
+    {
+      "job_name": "study_enrollment_summary",
+      "schedule": "",
+      "data_quality_check": "Y",
+      "job_type": "HIST",
+      "tag_params": {},
+      "individual_job_params": {
+        "destination_data_path": "/mnt/publish/drug_dev/study_enrollment_summary",
+        "source_file_path": "/mnt/unified/drug_dev/drug_studies,/mnt/unified/drug_dev/patient_enrollment,/mnt/unified/drug_dev/drug_product",
+        "query_file_path": "config/sql/publish/study_enrollment_summary.sql",
+        "publish_table_name": "study_enrollment_summary",
+        "application": "drug_dev"
+      }
+    },
+    {
+      "job_name": "study_adverse_event_summary",
+      "schedule": "",
+      "data_quality_check": "Y",
+      "job_type": "HIST",
+      "tag_params": {},
+      "individual_job_params": {
+        "destination_data_path": "/mnt/publish/drug_dev/study_adverse_event_summary",
+        "source_file_path": "/mnt/unified/drug_dev/drug_studies,/mnt/unified/drug_dev/adverse_event",
+        "query_file_path": "config/sql/publish/study_adverse_event_summary.sql",
+        "publish_table_name": "study_adverse_event_summary",
+        "application": "drug_dev"
+      }
+    },
+    {
+      "job_name": "study_regulatory_status",
+      "schedule": "",
+      "data_quality_check": "Y",
+      "job_type": "HIST",
+      "tag_params": {},
+      "individual_job_params": {
+        "destination_data_path": "/mnt/publish/drug_dev/study_regulatory_status",
+        "source_file_path": "/mnt/unified/drug_dev/drug_studies,/mnt/unified/drug_dev/regulatory_submission,/mnt/unified/drug_dev/drug_product,/mnt/unified/drug_dev/study_country_milestone",
+        "query_file_path": "config/sql/publish/study_regulatory_status.sql",
+        "publish_table_name": "study_regulatory_status",
+        "application": "drug_dev"
+      }
+    },
+    {
+      "job_name": "study_site_monitoring_summary",
+      "schedule": "",
+      "data_quality_check": "Y",
+      "job_type": "HIST",
+      "tag_params": {},
+      "individual_job_params": {
+        "destination_data_path": "/mnt/publish/drug_dev/study_site_monitoring_summary",
+        "source_file_path": "/mnt/unified/drug_dev/drug_studies,/mnt/unified/drug_dev/site_monitoring_detail",
+        "query_file_path": "config/sql/publish/study_site_monitoring_summary.sql",
+        "publish_table_name": "study_site_monitoring_summary",
+        "application": "drug_dev"
+      }
+    }
+  ]
+}
